@@ -1,0 +1,309 @@
+/* ===========================================
+   Premium Scratch Invitation Styles
+=========================================== */
+
+.scratch-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 40px;
+
+  background: rgba(255,255,255,0.04);
+
+  backdrop-filter: blur(25px);
+
+  border: 1px solid rgba(212,175,55,.15);
+
+  box-shadow:
+      0 0 80px rgba(212,175,55,.08),
+      inset 0 0 30px rgba(255,255,255,.03);
+}
+
+/* Gold Border Animation */
+
+.scratch-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:40px;
+
+    padding:1px;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(212,175,55,.15),
+    rgba(255,215,0,.8),
+    rgba(212,175,55,.15)
+    );
+
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+
+    mask-composite:exclude;
+
+    -webkit-mask-composite:xor;
+
+    pointer-events:none;
+}
+
+/* Noise Overlay */
+
+.scratch-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.04;
+
+    background-image:
+      radial-gradient(circle,#ffffff 1px,transparent 1px);
+
+    background-size:12px 12px;
+
+    pointer-events:none;
+}
+
+/* Premium Canvas */
+
+.scratch-canvas{
+
+    cursor:pointer;
+
+    touch-action:none;
+
+    user-select:none;
+
+    -webkit-user-select:none;
+}
+
+/* Cursor */
+
+.scratch-canvas:hover{
+
+    cursor:crosshair;
+}
+
+/* Glow */
+
+.gold-glow{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+    radial-gradient(circle,
+    rgba(212,175,55,.08),
+    transparent 70%);
+}
+
+/* Shine */
+
+.gold-shine{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+}
+
+.gold-shine::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-40%;
+
+    top:0;
+
+    width:140px;
+
+    height:100%;
+
+    transform:skewX(-20deg);
+
+    background:
+    linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,.35),
+    transparent);
+
+    animation:shine 4s linear infinite;
+}
+
+@keyframes shine{
+
+    0%{
+        left:-40%;
+    }
+
+    100%{
+        left:140%;
+    }
+
+}
+
+/* Floating */
+
+.float{
+
+    animation:
+    floating 5s ease-in-out infinite;
+}
+
+@keyframes floating{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* Fade Reveal */
+
+.reveal{
+
+    animation:
+    reveal .8s ease forwards;
+}
+
+@keyframes reveal{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        scale(.94);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        scale(1);
+    }
+
+}
+
+/* Pulse */
+
+.pulse-gold{
+
+    animation:
+    pulse 2.5s ease infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+
+        box-shadow:
+        0 0 0 rgba(212,175,55,.3);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 35px rgba(212,175,55,.5);
+
+    }
+
+    100%{
+
+        box-shadow:
+        0 0 0 rgba(212,175,55,.3);
+
+    }
+
+}
+
+/* Scroll Performance */
+
+canvas{
+
+    image-rendering:auto;
+
+    will-change:transform;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.scratch-card{
+    position: relative;
+    overflow: hidden;
+    border-radius:40px;
+    border:1px solid rgba(212,175,55,.3);
+
+    box-shadow:
+        0 0 60px rgba(212,175,55,.15),
+        inset 0 0 20px rgba(255,255,255,.05);
+}
+
+.scratch-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 40px;
+  box-shadow: inset 0 0 60px rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+}
+
+.scratch-canvas {
+    cursor: grab;
+}
+
+.scratch-canvas:active {
+    cursor: grabbing;
+}
+
+.scratch-card{
+    perspective:1200px;
+}
+
+.scratch-card::before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    border-radius:40px;
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.05),
+        transparent,
+        rgba(212,175,55,.15)
+    );
+    pointer-events:none;
+}

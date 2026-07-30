@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+:root {
+  /* Backgrounds */
+  --background: #050505;
+  --surface: #0b1220;
+  --surface-light: #141d2d;
+
+  /* Text */
+  --foreground: #f8f8f8;
+  --muted: #b8b8b8;
+
+  /* Luxury Gold */
+  --primary: #d4af37;
+  --primary-light: #f4d77b;
+  --primary-dark: #9d7a16;
+
+  /* Accent */
+  --accent: #8b1e3f; /* Wine Red */
+  --white: #ffffff;
+
+  /* Borders */
+  --border: rgba(212, 175, 55, 0.2);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
